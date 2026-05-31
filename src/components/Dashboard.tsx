@@ -158,10 +158,17 @@ export default function Dashboard({
   useEffect(() => {
     fetchBrandingServer()
       .then(cfg => {
-        if (cfg && cfg.companyName) {
-          setBrandConfig(cfg);
-          localStorage.setItem('recruiter_company', cfg.companyName);
-          setRecruiterCompany(cfg.companyName);
+        if (cfg) {
+          setBrandConfig({
+            appName: cfg.appName || 'Raincrew.AI',
+            logoUrl: cfg.logoUrl || '/logo.svg',
+            companyName: cfg.companyName || 'Raincrew.AI Sandbox Technologies',
+            themeColor: cfg.themeColor || '#0ea5e9',
+            gdprText: cfg.gdprText || 'By proceeding with this vocal-screening session, you explicitly agree that Raincrew.AI systems can record your voice, analyze speaking patterns (WPM, latency, filler word frequency) and query generative AI models to score your replies. All processing is strictly GDPR-compliant.'
+          });
+          const compName = cfg.companyName || 'Raincrew.AI Sandbox Technologies';
+          localStorage.setItem('recruiter_company', compName);
+          setRecruiterCompany(compName);
         }
       })
       .catch(console.error);
@@ -1007,16 +1014,12 @@ ${recruiterCompany}`;
                 {/* Visual header */}
                 <div className="p-4 flex items-center justify-between border-b border-indigo-50/50" style={{ backgroundColor: brandConfig.themeColor }}>
                   <div className="flex items-center gap-2">
-                    {brandConfig.logoUrl ? (
-                      <img 
-                        src={brandConfig.logoUrl} 
-                        className="h-5 w-auto object-contain rounded" 
-                        alt="Mock Logo" 
-                        referrerPolicy="no-referrer" 
-                      />
-                    ) : (
-                      <AudioLines className="w-4 h-4 text-white animate-pulse" />
-                    )}
+                    <img 
+                      src={brandConfig.logoUrl || '/logo.svg'} 
+                      className="h-5 w-auto object-contain rounded" 
+                      alt="Mock Logo" 
+                      referrerPolicy="no-referrer" 
+                    />
                     <span className="text-white text-xs font-extrabold tracking-tight font-display">
                       {brandConfig.appName || 'FoloUp'}
                     </span>

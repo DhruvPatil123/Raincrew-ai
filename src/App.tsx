@@ -334,10 +334,10 @@ export default function App() {
       .then(cfg => {
         if (cfg) {
           setBranding({
-            appName: cfg.appName || '',
-            logoUrl: cfg.logoUrl || '',
-            companyName: cfg.companyName || 'FoloUp Sandbox Technologies',
-            themeColor: cfg.themeColor || '#4f46e5'
+            appName: cfg.appName || 'Raincrew.AI',
+            logoUrl: cfg.logoUrl || '/logo.svg',
+            companyName: cfg.companyName || 'Raincrew.AI Sandbox Technologies',
+            themeColor: cfg.themeColor || '#0ea5e9'
           });
         }
       })
@@ -460,18 +460,12 @@ export default function App() {
             onClick={() => currentUserRole === 'recruiter' && handleBackToDashboard()}
             className={`flex items-center gap-3 group ${currentUserRole === 'recruiter' ? 'cursor-pointer' : 'cursor-default select-none'}`}
           >
-            {branding.logoUrl ? (
-              <img 
-                src={branding.logoUrl} 
-                className="h-9 max-w-[130px] object-contain rounded-lg filter drop-shadow-sm" 
-                alt="Logo" 
-                referrerPolicy="no-referrer" 
-              />
-            ) : (
-              <div className="p-2 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl text-white group-hover:scale-110 transition-all duration-300 shadow-lg shadow-indigo-500/20 flex items-center justify-center">
-                <AudioLines className="w-5 h-5 text-white" />
-              </div>
-            )}
+            <img 
+              src={branding.logoUrl || '/logo.svg'} 
+              className="h-9 max-w-[130px] object-contain rounded-lg filter drop-shadow-sm" 
+              alt="Logo" 
+              referrerPolicy="no-referrer" 
+            />
             <span className={`text-2xl font-display font-black tracking-tighter ${
               darkMode ? 'text-white' : 'text-slate-900'
             }`}>

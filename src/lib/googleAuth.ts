@@ -14,20 +14,37 @@ let cachedAccessToken: string | null = null;
 let cachedUser: User | null = null;
 let listenerCallback: ((user: User | null) => void) | null = null;
 
-// Dynamic client config fetcher
+// Dynamic client config fetcher with resilient retry behavior
 export const getSupabaseClient = async () => {
   if (supabase) return supabase;
-  try {
-    const res = await fetch('/api/supabase-client-config');
-    if (res.ok) {
-      const data = await res.json();
-      if (data.supabaseUrl && data.supabaseKey) {
-        supabase = createClient(data.supabaseUrl, data.supabaseKey);
-        return supabase;
+  
+  const maxRetries = 4;
+  let attempt = 0;
+  
+  while (attempt < maxRetries) {
+    try {
+      const res = await fetch('/api/supabase-client-config');
+      if (res.ok) {
+        const data = await res.json();
+        if (data.supabaseUrl && data.supabaseKey) {
+          const cleanUrl = String(data.supabaseUrl).trim();
+          const cleanKey = String(data.supabaseKey).trim();
+          if (cleanUrl !== "" && cleanKey !== "") {
+            supabase = createClient(cleanUrl, cleanKey);
+            return supabase;
+          }
+        }
+        break; // Successfully fetched, but credentials are empty/not configured
       }
+    } catch (e: any) {
+      attempt++;
+      if (attempt >= maxRetries) {
+        console.warn("Failed to retrieve Supabase client config: connection could not be established.", e.message || e);
+        break;
+      }
+      // Delay before retrying with exponential backoff (e.g., 500ms, 1000ms, 1500ms)
+      await new Promise((resolve) => setTimeout(resolve, attempt * 500));
     }
-  } catch (e) {
-    console.error("Failed to construct Supabase Auth Client:", e);
   }
   return null;
 };

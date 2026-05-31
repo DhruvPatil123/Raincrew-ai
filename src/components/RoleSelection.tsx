@@ -294,18 +294,12 @@ export default function RoleSelection({ onSelectRole, campaigns, activeCampaignI
         
         <div className="space-y-8 z-10">
           <div className="flex items-center gap-2.5">
-            {branding?.logoUrl ? (
-              <img 
-                src={branding.logoUrl} 
-                className="h-8 max-w-[125px] object-contain rounded-lg" 
-                alt="Logo" 
-                referrerPolicy="no-referrer" 
-              />
-            ) : (
-              <div className="p-2.5 bg-gradient-to-tr from-indigo-600 to-indigo-500 rounded-2xl text-white shadow-[0_4px_14px_rgba(99,102,241,0.28)] flex items-center justify-center animate-pulse">
-                <AudioLines className="w-5 h-5 text-indigo-50" />
-              </div>
-            )}
+            <img 
+              src={branding?.logoUrl || '/logo.svg'} 
+              className="h-8 max-w-[125px] object-contain rounded-lg filter drop-shadow-sm" 
+              alt="Logo" 
+              referrerPolicy="no-referrer" 
+            />
             <span className="text-xl font-display font-extrabold tracking-tight">
               {branding?.appName ? (
                 branding.appName === 'Raincrew.AI' ? (
@@ -314,7 +308,7 @@ export default function RoleSelection({ onSelectRole, campaigns, activeCampaignI
                   <span>{branding.appName} AI Portal</span>
                 )
               ) : (
-                <>Folo<span className="text-indigo-400">Up</span> AI Portal</>
+                <>Raincrew<span className="text-indigo-400">.AI</span> AI Portal</>
               )}
             </span>
           </div>

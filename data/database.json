@@ -1,0 +1,534 @@
+{
+  "campaigns": [
+    {
+      "id": "camp-1",
+      "title": "Senior Frontend Engineer",
+      "department": "Engineering",
+      "description": "We are looking for a Senior Frontend Engineer proficient in React, Tailwind CSS, TypeScript, and state management systems. The candidate should have experience optimizing rendering speed and leading UI architectural design.",
+      "experience": "5+ years",
+      "questions": [
+        "Tell me about a complex React component or dashboard you built. What architectural decisions did you make and why?",
+        "How do you approach optimizing performance in a React application that is experiencing slow renders?",
+        "What is your preferred state management pattern for a large-scale enterprise application, and what are its trade-offs?",
+        "How do you handle UI styling for responsive architectures, especially with tools like Tailwind CSS?"
+      ],
+      "createdAt": "2026-05-10T14:30:00Z",
+      "candidateCount": 4
+    },
+    {
+      "id": "camp-2",
+      "title": "Corporate Sales Representative",
+      "department": "Sales & Growth",
+      "description": "Looking for an enthusiastic sales representative to drive pipeline growth, demonstrate B2B product suites, handle client objections, and secure subscription licenses.",
+      "experience": "2-4 years",
+      "questions": [
+        "Walk me through a successful B2B deal you closed. What was your strategy from contact to signatures?",
+        "How do you handle a strong objection from a prospective customer saying our solution is too expensive?",
+        "How do you qualify a warm lead to ensure you are prioritizing high-impact accounts?",
+        "What motivates you to hit quotas under high-pressure scenarios?"
+      ],
+      "createdAt": "2026-05-18T09:12:00Z",
+      "candidateCount": 2
+    }
+  ],
+  "candidates": [
+    {
+      "id": "cand-1",
+      "campaignId": "camp-1",
+      "name": "Alex Rivera",
+      "email": "alex.rivera@gmail.com",
+      "phone": "+1 (555) 342-9988",
+      "status": "Evaluated",
+      "appliedDate": "2026-05-12T10:15:00Z",
+      "duration": "6m 22s",
+      "score": 92,
+      "fitCategory": "Hire",
+      "overallEvaluation": "Alex showed exceptional technical depth in React rendering performance, deep understanding of fiber trees, and practical architecture patterns. He balanced senior leadership logic with hands-on knowledge of modern CSS and typing systems.",
+      "strengths": [
+        "Deep architectural knowledge of React internals, scheduling, and rendering cycles.",
+        "Excellent performance profiling skills, identifying unnecessary state triggers.",
+        "Highly professional presentation and logical communication."
+      ],
+      "weaknesses": [
+        "Tended to overcomplicate state patterns for simple forms rather than defaulting to local mechanisms."
+      ],
+      "transcript": [
+        {
+          "id": "t-1",
+          "speaker": "AI",
+          "text": "Hey there Alex! Thanks for joining us today. Let's dive right in. To kick things off, tell me about a complex React component or dashboard you built. What architectural decisions did you make and why?",
+          "timestamp": "00:05"
+        },
+        {
+          "id": "t-2",
+          "speaker": "Candidate",
+          "text": "Hi! Of course. In my last project, I architected a real-time financial tracking dashboard aggregating dozens of high-frequency stock tickers. The core architectural decision was separating the volatile web socket push engine from visual component trees. We used a normalized local store with state buffers, only releasing screen refreshes at a debounced 60fps interval. This kept CPU utilization under fifteen percent and eliminated render choking entirely.",
+          "timestamp": "01:10"
+        },
+        {
+          "id": "t-3",
+          "speaker": "AI",
+          "text": "That is incredibly smart. Seamless data flow is everything under low-latency limits. Moving on: How do you approach optimizing performance in a React application that is experiencing slow rendering?",
+          "timestamp": "01:50"
+        },
+        {
+          "id": "t-4",
+          "speaker": "Candidate",
+          "text": "I always start with measurement before modifying anything. I open the React DevTools Profiler, record a representative interaction, and look for long-running fiber updates or recursive renders. Common issues are usually unstable objects or function references passed in contexts, or high-level state updates triggering whole cascades. I solve these by lifting state down, memoizing callback references with useCallback, wrapping heavy visual children in React.memo, and occasionally moving to absolute primitive state fields.",
+          "timestamp": "03:12"
+        },
+        {
+          "id": "t-5",
+          "speaker": "AI",
+          "text": "Exactly, profile first, fix second! Now let's discuss state. What is your preferred state management pattern for a large-scale enterprise application, and what are its trade-offs?",
+          "timestamp": "03:55"
+        },
+        {
+          "id": "t-6",
+          "speaker": "Candidate",
+          "text": "For massive scale, I prefer a combination of Zustand for light global client states and TanStack Query for server-side state. The main trade-off is separating client-only actions from server responses. Zustand keeps the code incredibly lean and boilerplate-free compared to Redux, which makes onboarding developers extremely fast. TanStack handles caching, auto-refetching, and offline states natively, which saves us months of custom sync coding.",
+          "timestamp": "05:08"
+        },
+        {
+          "id": "t-7",
+          "speaker": "AI",
+          "text": "Marvelous. Lastly, how do you handle UI styling for responsive architectures, especially with tools like Tailwind CSS?",
+          "timestamp": "05:40"
+        },
+        {
+          "id": "t-8",
+          "speaker": "Candidate",
+          "text": "I am a huge advocate of Tailwind! I strictly follow mobile-first responsive breakpoints using helpers like md, lg, and xl. I avoid embedding absolute pixel dimensions, preferring flexible layouts grids, custom flex boxes with matching gaps, and fluid spacing scales. It makes designing beautiful interfaces remarkably fast and maintains uniform token values across our screens.",
+          "timestamp": "06:15"
+        },
+        {
+          "id": "t-9",
+          "speaker": "AI",
+          "text": "Perfect Alex! Those were all the screening questions I have for today. We will evaluate our discussion and get back to you soon!",
+          "timestamp": "06:22"
+        }
+      ],
+      "detailedScores": [
+        {
+          "criteria": "Technical Depth",
+          "score": 95,
+          "maxScore": 100,
+          "feedback": "Alex exhibited comprehensive mastery over the React fiber model, memory footprints, and optimization strategies."
+        },
+        {
+          "criteria": "Architectural Style",
+          "score": 92,
+          "maxScore": 100,
+          "feedback": "Strong architectural discipline, utilizing decoupled state stores and optimized interval updates."
+        },
+        {
+          "criteria": "Communication & Culture",
+          "score": 90,
+          "maxScore": 100,
+          "feedback": "Articulate, descriptive, and very professional verbal expression."
+        }
+      ],
+      "qnaPairs": [
+        {
+          "question": "Tell me about a complex React component or dashboard you built.",
+          "answer": "In my last project, I architected a real-time financial tracking dashboard aggregating dozens of tickers. We decoupled the web socket stream, buffered pushes, and updated the screen at a debounced 60fps.",
+          "rating": 96,
+          "feedback": "An exemplary explanation showcasing deep performance engineering and technical pragmatism."
+        },
+        {
+          "question": "How do you approach optimizing performance in a React application?",
+          "answer": "Use React DevTools Profiler first. Fix deep rerenders by flattening state pools, using useMemo and useCallback to preserve reference stability, or doing lazy loading.",
+          "rating": 94,
+          "feedback": "Demonstrated precise, data-driven methodology for troubleshooting lag and bottlenecks."
+        },
+        {
+          "question": "What is your preferred state management pattern?",
+          "answer": "Zustand for global client values paired with TanStack Query for caching and syncing backend APIs. It remains boilerplate-free compared to Redux.",
+          "rating": 90,
+          "feedback": "Sensible selection of modern packages, demonstrating understanding of architectural efficiency."
+        }
+      ],
+      "consentAgreedTime": "2026-05-12T10:10:00Z",
+      "gdprCompliantMode": true,
+      "tabSwitchCount": 0,
+      "longSilenceCount": 0,
+      "suspiciousVoiceNoise": false,
+      "spokenLanguage": "English (US Accent)",
+      "deliveryMetrics": {
+        "totalFillers": 3,
+        "wpm": 125,
+        "clarityLevel": "Excellent",
+        "overallPacing": "Balanced & Fluent (125 WPM)",
+        "fillerWords": {
+          "um": 1,
+          "like": 2
+        }
+      }
+    },
+    {
+      "id": "cand-2",
+      "campaignId": "camp-1",
+      "name": "Sarah Chen",
+      "email": "sarah.chen@techcorp.io",
+      "phone": "+1 (555) 123-4567",
+      "status": "Evaluated",
+      "appliedDate": "2026-05-14T11:40:00Z",
+      "duration": "4m 50s",
+      "score": 78,
+      "fitCategory": "Shortlist",
+      "overallEvaluation": "Sarah is a proficient frontend developer with strong visual and layout skills. However, she was slightly weaker on React internals, particularly around fiber tree structure and granular profiling, though her practical coding habits are excellent.",
+      "strengths": [
+        "Superb aesthetic design eye and mastery of responsive systems.",
+        "Active contributor to frontend open-source tooling.",
+        "Friendly and highly approachable verbal demeanor."
+      ],
+      "weaknesses": [
+        "Gaps in profiling knowledge, relying on trial-and-error changes rather than profiling tools initially.",
+        "Less familiar with complex state normalization."
+      ],
+      "transcript": [
+        {
+          "id": "t-1",
+          "speaker": "AI",
+          "text": "Hello Sarah! Thanks for speaking with us. To begin: tell me about a complex React component or dashboard you built.",
+          "timestamp": "00:04"
+        },
+        {
+          "id": "t-2",
+          "speaker": "Candidate",
+          "text": "Hi! Yes. In my last position, I designed a multi-window user settings dashboard where employees could change workspace properties, customize layouts, and manage permissions. I used standard React context for sharing preferences. It looked great and saved settings locally using browser sessions.",
+          "timestamp": "01:05"
+        },
+        {
+          "id": "t-3",
+          "speaker": "AI",
+          "text": "Splendid. Let's move to optimization: how do you approach diagnosing and resolving slow renders?",
+          "timestamp": "01:45"
+        },
+        {
+          "id": "t-4",
+          "speaker": "Candidate",
+          "text": "Usually, when screens feel sluggish, I start checking if I am doing duplicate fetch requests. Then I look at components and make sure I use React.useMemo around data calculations, and sometimes split heavy components into smaller files to avoid large render chunks. I also try to avoid inline objects in HTML tags as they can recreate on load.",
+          "timestamp": "02:50"
+        },
+        {
+          "id": "t-5",
+          "speaker": "AI",
+          "text": "Wonderful practical advice! Now, what is your preferred state management pattern for a large-scale enterprise application, and what are its trade-offs?",
+          "timestamp": "03:22"
+        },
+        {
+          "id": "t-6",
+          "speaker": "Candidate",
+          "text": "Honestly, I prefer Redux Toolkit because that is what most companies I have worked at are using. It is really powerful and structured, and the Redux DevTools are amazing. The downside is definitely the boilerplate code—even with the toolkit, setting up slices and actions can take a while and feel repetitive for simple feature states.",
+          "timestamp": "04:10"
+        },
+        {
+          "id": "t-7",
+          "speaker": "AI",
+          "text": "Agreed, structural consistency is a huge relief at scale. Finally, how do you handle responsive typography and layout using Tailwind CSS?",
+          "timestamp": "04:30"
+        },
+        {
+          "id": "t-8",
+          "speaker": "Candidate",
+          "text": "Tailwind has simplified this so much! I use arbitrary class lists prefixed with sm, md, or lg and control spacing fluidly. I also pair it with CSS Grid systems so elements wrap cleanly on mobile, and apply flex boxes for navigation bars. It yields a really polished, pixel-perfect feel.",
+          "timestamp": "04:45"
+        },
+        {
+          "id": "t-9",
+          "speaker": "AI",
+          "text": "Fantastic Sarah, it was a pleasure conversing with you! We will outline our details and contact you soon.",
+          "timestamp": "04:50"
+        }
+      ],
+      "detailedScores": [
+        {
+          "criteria": "Technical Depth",
+          "score": 72,
+          "maxScore": 100,
+          "feedback": "Understood standard hooks but had slight gaps regarding performance optimizations and profiling instruments."
+        },
+        {
+          "criteria": "Architectural Style",
+          "score": 76,
+          "maxScore": 100,
+          "feedback": "Relied heavily on high-level React context and standard Redux packages without consideration for performance impacts."
+        },
+        {
+          "criteria": "UX & CSS Polish",
+          "score": 88,
+          "maxScore": 100,
+          "feedback": "Showed outstanding styling intuition, understanding responsive containers, grid wrapping, and font scales."
+        }
+      ],
+      "qnaPairs": [
+        {
+          "question": "Tell me about a complex React component or dashboard you built.",
+          "answer": "Built a multi-window settings dashboard sharing standard React context state. Preserved setups inside session utilities.",
+          "rating": 80,
+          "feedback": "A great practical component, though it used simpler state management architectures."
+        },
+        {
+          "question": "How do you approach optimizing performance in a React application?",
+          "answer": "Audit network requests, add React.useMemo around array maps, split heavy layout elements, and remove inline styling elements.",
+          "rating": 70,
+          "feedback": "Identified helpful UI conventions, though missed critical tools like the flame-graph Profiler."
+        }
+      ],
+      "consentAgreedTime": "2026-05-14T11:35:00Z",
+      "gdprCompliantMode": true,
+      "tabSwitchCount": 1,
+      "longSilenceCount": 0,
+      "suspiciousVoiceNoise": false,
+      "spokenLanguage": "English (APAC Accent)",
+      "deliveryMetrics": {
+        "totalFillers": 7,
+        "wpm": 110,
+        "clarityLevel": "Good",
+        "overallPacing": "Structured & Balanced (110 WPM)",
+        "fillerWords": {
+          "like": 4,
+          "basically": 3
+        }
+      }
+    },
+    {
+      "id": "cand-3",
+      "campaignId": "camp-1",
+      "name": "Marcus Johnson",
+      "email": "marcus.j@outlook.com",
+      "phone": "+1 (555) 765-1122",
+      "status": "Shortlist",
+      "appliedDate": "2026-05-25T15:20:00Z",
+      "duration": "5m 12s",
+      "score": 83,
+      "fitCategory": "Shortlist",
+      "overallEvaluation": "Marcus showed strong competency in state management engines and robust CSS/Vite structure, with minor pacing pauses.",
+      "strengths": [
+        "Clean code structure mindset",
+        "Zustand familiarity"
+      ],
+      "weaknesses": [
+        "Speech had several long silences during architectural design explanations"
+      ],
+      "transcript": [],
+      "detailedScores": [
+        {
+          "criteria": "Technical Depth",
+          "score": 84,
+          "maxScore": 100,
+          "feedback": "Thorough understanding of state caches."
+        }
+      ],
+      "qnaPairs": [],
+      "consentAgreedTime": "2026-05-25T15:10:00Z",
+      "gdprCompliantMode": true,
+      "tabSwitchCount": 0,
+      "longSilenceCount": 3,
+      "suspiciousVoiceNoise": false,
+      "spokenLanguage": "English (US Accent)",
+      "deliveryMetrics": {
+        "totalFillers": 6,
+        "wpm": 92,
+        "clarityLevel": "Moderate",
+        "overallPacing": "Slow & Deliberate (92 WPM)",
+        "fillerWords": {
+          "um": 4,
+          "ah": 2
+        }
+      }
+    },
+    {
+      "id": "cand-4",
+      "campaignId": "camp-2",
+      "name": "Elena Rostova",
+      "email": "elena.rostova@salescloud.com",
+      "phone": "+1 (555) 909-4433",
+      "status": "Reject",
+      "appliedDate": "2026-05-19T09:12:00Z",
+      "duration": "3m 15s",
+      "score": 44,
+      "fitCategory": "Reject",
+      "overallEvaluation": "Elena was enthusiastic but lacked B2B consultative selling depth. She was easily flustered by the mock price objection and relied on discount giveaways immediately rather than discussing ROI value propositions.",
+      "strengths": [
+        "Very friendly tone, high energy and welcoming voice presence.",
+        "Active listener."
+      ],
+      "weaknesses": [
+        "Poor objection handling, immediately offering a thirty percent discount without investigating pain points.",
+        "Struggled with lead qualification models (BANT criteria)."
+      ],
+      "transcript": [
+        {
+          "id": "t-1",
+          "speaker": "AI",
+          "text": "Welcome Elena. Excited to talk tech sales today! Can you start by walking me through a successful B2B deal you closed? What was your strategy from contact to signatures?",
+          "timestamp": "00:05"
+        },
+        {
+          "id": "t-2",
+          "speaker": "Candidate",
+          "text": "Yes, hi! In my last job, I sold subscriptions for a CRM software. I had a lead that filled out a contact form. I immediately called them, explained our system for thirty minutes, and then emailed them a price brochure. They seemed to like the product, so I followed up twice over email, and they finally signed on the dotted line. It was fairly simple.",
+          "timestamp": "00:55"
+        },
+        {
+          "id": "t-3",
+          "speaker": "AI",
+          "text": "Interesting, speed to lead is crucial. Let's try a roleplay question: How do you handle a strong objection from a prospective customer saying our solution is too expensive?",
+          "timestamp": "01:25"
+        },
+        {
+          "id": "t-4",
+          "speaker": "Candidate",
+          "text": "Oh, if they say it's too expensive, I immediately try to make them happy. I tell them I can talk to my manager and get them a thirty percent discount right today. If they still think it's high, I offer to give them a free month or even extend the discount further. Keeping customers happy is my priority!",
+          "timestamp": "02:05"
+        },
+        {
+          "id": "t-5",
+          "speaker": "AI",
+          "text": "I see. Retaining margin is vital to high-growth, though. Next up: How do you qualify a warm lead to ensure you are prioritizing high-impact accounts?",
+          "timestamp": "02:35"
+        },
+        {
+          "id": "t-6",
+          "speaker": "Candidate",
+          "text": "I usually just look at how fast they email me back. If they respond quickly, I work with them. If they take a few days, I move them down my checklist.",
+          "timestamp": "03:10"
+        },
+        {
+          "id": "t-7",
+          "speaker": "AI",
+          "text": "Understood. Thank you Elena, that concludes our screening today!",
+          "timestamp": "03:15"
+        }
+      ],
+      "detailedScores": [
+        {
+          "criteria": "Objection Handling",
+          "score": 32,
+          "maxScore": 100,
+          "feedback": "Gave away margin immediately without attempting to build business value or establish true cost-of-inaction metrics."
+        },
+        {
+          "criteria": "Consultative approach",
+          "score": 48,
+          "maxScore": 100,
+          "feedback": "Relies on standard price cuts rather than exploring client motivation profiles."
+        }
+      ],
+      "qnaPairs": [
+        {
+          "question": "How do you handle a strong objection?",
+          "answer": "Give them a thirty percent discount right away.",
+          "rating": 30,
+          "feedback": "Unacceptable strategy for enterprise software reps; severely diminishes product stature and contract size."
+        }
+      ],
+      "consentAgreedTime": "2026-05-19T09:08:00Z",
+      "gdprCompliantMode": true,
+      "tabSwitchCount": 4,
+      "longSilenceCount": 2,
+      "suspiciousVoiceNoise": true,
+      "spokenLanguage": "Russian (Accent Spoken)",
+      "deliveryMetrics": {
+        "totalFillers": 12,
+        "wpm": 145,
+        "clarityLevel": "Needs Improvement",
+        "overallPacing": "Rapid & Energetic (145 WPM)",
+        "fillerWords": {
+          "like": 7,
+          "basically": 5
+        }
+      }
+    },
+    {
+      "id": "cand-5",
+      "campaignId": "camp-2",
+      "name": "David Kim",
+      "email": "david.kim@globalsecure.com",
+      "phone": "+1 (555) 434-1100",
+      "status": "Pending",
+      "appliedDate": "2026-05-24T10:00:00Z",
+      "duration": "--",
+      "score": 0,
+      "fitCategory": "Shortlist",
+      "overallEvaluation": "This candidate has not undergone the digital screening interview yet. Invite link is active.",
+      "strengths": [],
+      "weaknesses": []
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1",
+      "action": "CAMPAIGN_CREATE",
+      "details": "Created Senior Frontend Engineer Vetting Pipeline",
+      "operator": "Eleanor Vance",
+      "timestamp": "2026-05-10T14:30:00Z"
+    },
+    {
+      "id": "log-2",
+      "action": "CANDIDATE_INVITE",
+      "details": "Invited Alex Rivera to Frontend campaign",
+      "operator": "Eleanor Vance",
+      "timestamp": "2026-05-12T10:10:00Z"
+    },
+    {
+      "id": "log-3",
+      "action": "INTERVIEW_COMPLETE",
+      "details": "Candidate Alex Rivera finished voice screen (Score: 92)",
+      "operator": "AI Virtual System",
+      "timestamp": "2026-05-12T10:22:00Z"
+    },
+    {
+      "id": "log-4",
+      "action": "CANDIDATE_INVITE",
+      "details": "Invited Sarah Chen to Frontend campaign",
+      "operator": "Eleanor Vance",
+      "timestamp": "2026-05-14T11:30:00Z"
+    },
+    {
+      "id": "log-1780169767818",
+      "action": "AUTH_SSO_SUCCESS",
+      "details": "Recruiter authenticated successfully using provider 'github'",
+      "operator": "Peter Parker",
+      "timestamp": "2026-05-30T19:36:07.818Z",
+      "workspaceId": "dailybugle.com"
+    },
+    {
+      "id": "log-1780170932393",
+      "action": "AUTH_SSO_SUCCESS",
+      "details": "Recruiter authenticated successfully using provider 'github'",
+      "operator": "Peter Parker",
+      "timestamp": "2026-05-30T19:55:32.393Z",
+      "workspaceId": "dailybugle.com"
+    }
+  ],
+  "branding": {
+    "logoUrl": "/logo.svg",
+    "appName": "Raincrew.AI",
+    "companyName": "Raincrew.AI",
+    "primaryColor": "#0ea5e9",
+    "gdprText": "By proceeding with this vocal interview screen, you consent to let the AI assessment pipeline analyze your voice speech patterns and proctoring video indicators for hiring evaluation."
+  },
+  "emailLogs": [
+    {
+      "id": "m-1",
+      "to": "alex.rivera@gmail.com",
+      "subject": "Vetting Invitation: Senior Frontend Engineer",
+      "template": "Frontend Screening Invite",
+      "sentAt": "2026-05-12T10:10:00Z",
+      "status": "Delivered"
+    },
+    {
+      "id": "m-2",
+      "to": "sarah.chen@techcorp.io",
+      "subject": "Vetting Invitation: Senior Frontend Engineer",
+      "template": "Frontend Screening Invite",
+      "sentAt": "2026-05-14T11:30:00Z",
+      "status": "Delivered"
+    }
+  ],
+  "recruiterNotes": {},
+  "sessions": {}
+}

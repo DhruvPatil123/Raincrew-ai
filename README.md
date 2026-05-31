@@ -1,6 +1,6 @@
 
   
-  # 🎙️ FoloUp: Next-Gen AI Talent Acquisition & Proctoring Room
+  # 🎙️ Raincrew.ai: Next-Gen AI Talent Acquisition & Proctoring Room
   
   [![Vite](https://img.shields.io/badge/Vite-6.2.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
   [![React](https://img.shields.io/badge/React-19.0.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -8,14 +8,14 @@
   [![Gemini Live API](https://img.shields.io/badge/Gemini_Live-3.1_Flash-orange?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
   [![Firebase Firestore](https://img.shields.io/badge/Firebase_Firestore-12.13.0-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
   
-  **FoloUp** is a state-of-the-art, high-fidelity AI-powered recruiting and talent acquisition ecosystem. It modernizes traditional voice screening and technical assessments by utilizing the **Google Gemini Multimodal Live WebSocket API** to conduct real-time oral interviews, combined with a comprehensive **biometric and browser proctoring suite** and a deep-dive **evaluation engine** that renders candidate report scorecards, pacing metrics, gap analyses, and collaborative tools.
+  **Raincrew.ai** is a state-of-the-art, high-fidelity AI-powered recruiting and talent acquisition ecosystem. It modernizes traditional voice screening and technical assessments by utilizing the **Google Gemini Multimodal Live WebSocket API** to conduct real-time oral interviews, combined with a comprehensive **biometric and browser proctoring suite** and a deep-dive **evaluation engine** that renders candidate report scorecards, pacing metrics, gap analyses, and collaborative tools.
 </div>
 
 ---
 
 ## 🧭 Project Architecture Overview
 
-FoloUp is built as a unified full-stack application that couples a high-performance **Vite + React 19** frontend with a robust **Node.js Express + WebSocket** backend. It features **Firebase Firestore** as its production database with a local JSON fallback file storage system to guarantee resilient, multi-tenant workspace separation.
+Raincrew.ai is built as a unified full-stack application that couples a high-performance **Vite + React 19** frontend with a robust **Node.js Express + WebSocket** backend. It features **Firebase Firestore** as its production database with a local JSON fallback file storage system to guarantee resilient, multi-tenant workspace separation.
 
 ```mermaid
 graph TD
@@ -203,7 +203,7 @@ npm run start
 
 ## 🔒 Security & Data Integrity
 
-FoloUp takes enterprise security and candidate data protection seriously:
+Raincrew.ai takes enterprise security and candidate data protection seriously:
 * **Biometric & GDPR Consents:** Transparent pre-interview gates allow candidates to review and agree to audio and video processing terms.
 * **Audit Logging:** Every administrative action—such as creating campaigns, dispatching invitations, completing evaluations, or moving candidates—is securely logged (`GET /api/audit-logs`).
 * **Bias Reduction:** One-click Anonymous Mode allows hiring teams to grade scorecards purely based on performance, blocking out names, emails, and phone numbers.
@@ -212,5 +212,5 @@ FoloUp takes enterprise security and candidate data protection seriously:
 ---
 
 <div align="center">
-  <p>🚀 Created securely by Dhruvvv, The FoloUp AI Systems.</p>
+  <p>🚀 Created securely by Dhruvvv, The Raincrew.ai Systems.</p>
 </div>
